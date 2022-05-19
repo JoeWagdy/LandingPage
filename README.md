@@ -45,8 +45,6 @@ My first full web project with HTML, CSS & JavaScript
 
 - The code was written with consistent, logical, and easy-to-read formatting.
 
-[(Back to top)](#table-of-contents)
-
 
 # Footer
 [(Back to top)](#table-of-contents)
