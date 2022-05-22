@@ -25,6 +25,7 @@ const navList = document.getElementById('navbar__list');
 const sections = document.querySelectorAll('section');
 const backToTop = document.getElementById('backToTop');
 const headrMenu = document.getElementById('header');
+let navItems;
 
 /**
  * End Global Variables
@@ -32,11 +33,11 @@ const headrMenu = document.getElementById('header');
  * 
 */
 
-
 function isInViewport(element) {
-    return element.getBoundingClientRect().y <= (window.innerHeight / 2) 
-    && element.getBoundingClientRect().y + element.getBoundingClientRect().height > window.innerHeight / 2;
+    return element.getBoundingClientRect().y <= (window.innerHeight / 2)
+        && element.getBoundingClientRect().y + element.getBoundingClientRect().height > window.innerHeight / 2;
 }
+
 /**
  * End Helper Functions
  * Begin Main Functions
@@ -44,34 +45,37 @@ function isInViewport(element) {
 */
 
 // build the nav
-function addSectionToNav(){
-    for(let section of sections){
+function addSectionToNav() {
+    for (let section of sections) {
         let sectionLink = document.createElement('li');
         sectionLink.innerHTML = `<a href='#${section.getAttribute('id')}' data-nav='${section.getAttribute('id')}' class='menu__link'>${section.getAttribute('data-nav')}</a>`;
         navList.appendChild(sectionLink);
     }
+    navItems = document.getElementsByClassName('menu__link');
 }
 
 // Add class 'active' to section when near top of viewport
-let timer = null;
-window.onscroll = function(){
-    sections.forEach(function(activeSection){
-        isInViewport(activeSection)? activeSection.classList.add('your-active-class') : activeSection.classList.remove('your-active-class');
+window.onscroll = function () {
+    let timer = null;
+    sections.forEach(function (activeSection, index) {
+        isInViewport(activeSection) ? 
+        (activeSection.classList.add('your-active-class'), navItems[index].style ='background-color: #54b87c; color: #353a40;') :
+        (activeSection.classList.remove('your-active-class'), navItems[index].style = null);
     })
-    headrMenu.style.position='absolute';
-    if(timer!==null){
+    headrMenu.style.position = 'absolute';
+    if (timer !== null) {
         clearTimeout(timer);
     }
-    timer=setTimeout(function(){
-        headrMenu.style.position='fixed';
-    },350);
+    timer = setTimeout(function () {
+        headrMenu.style.position = 'fixed';
+    }, 350);
 }
 
 // Scroll to anchor ID using scrollTO event
-navList.addEventListener('click', function(event){
-    if(event.target.nodeName === 'A'){
+navList.addEventListener('click', function (event) {
+    if (event.target.nodeName === 'A') {
         event.preventDefault();
-        document.getElementById(event.target.getAttribute('data-nav')).scrollIntoView({behavior: "smooth"});
+        document.getElementById(event.target.getAttribute('data-nav')).scrollIntoView({ behavior: "smooth" });
     }
 })
 
@@ -84,8 +88,8 @@ navList.addEventListener('click', function(event){
 // Build menu 
 addSectionToNav();
 // Scroll to section on link click
-backToTop.addEventListener('click',function(event){
-    window.scrollTo({top: 0, behavior: 'smooth'});
+backToTop.addEventListener('click', function (event) {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 })
 // Set sections as active
 

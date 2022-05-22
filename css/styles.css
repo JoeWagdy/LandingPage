@@ -68,6 +68,7 @@ section {
     padding-left: 0;
     margin: 0;
     text-align: right;
+    background-color: #353a40;
 }
 
 .navbar__menu li {
@@ -79,12 +80,12 @@ section {
     padding: 1em;
     font-weight: bold;
     text-decoration: none;
-    color: #000;
+    color: #54b87c;
 }
 
 .navbar__menu .menu__link:hover {
-    background: #333;
-    color: #fff;
+    background: #54b87c;
+    color: #353a40;
     transition: ease 0.3s all;
 }
 
