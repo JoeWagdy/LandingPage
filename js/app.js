@@ -14,11 +14,6 @@
 */
 
 /**
- * Comments should be present at the beginning of each procedure and class.
- * Great to have comments before crucial code sections within the procedure.
-*/
-
-/**
  * Define Global Variables
 */
 const navList = document.getElementById('navbar__list');
@@ -58,9 +53,9 @@ function addSectionToNav() {
 window.onscroll = function () {
     let timer = null;
     sections.forEach(function (activeSection, index) {
-        isInViewport(activeSection) ? 
-        (activeSection.classList.add('your-active-class'), navItems[index].style ='background-color: #54b87c; color: #353a40;') :
-        (activeSection.classList.remove('your-active-class'), navItems[index].style = null);
+        isInViewport(activeSection) ?
+            (activeSection.classList.add('your-active-class'), navItems[index].classList.add('active')) :
+            (activeSection.classList.remove('your-active-class'), navItems[index].classList.remove('active'));
     })
     headrMenu.style.position = 'absolute';
     if (timer !== null) {
@@ -69,15 +64,15 @@ window.onscroll = function () {
     timer = setTimeout(function () {
         headrMenu.style.position = 'fixed';
     }, 350);
-}
+};
 
 // Scroll to anchor ID using scrollTO event
 navList.addEventListener('click', function (event) {
     if (event.target.nodeName === 'A') {
         event.preventDefault();
-        document.getElementById(event.target.getAttribute('data-nav')).scrollIntoView({ behavior: "smooth" });
+        document.getElementById(event.target.getAttribute('data-nav')).scrollIntoView({behavior: 'smooth'});
     }
-})
+});
 
 /**
  * End Main Functions
@@ -85,12 +80,9 @@ navList.addEventListener('click', function (event) {
  * 
 */
 
-// Build menu 
+// Build menu
 addSectionToNav();
 // Scroll to section on link click
 backToTop.addEventListener('click', function (event) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-})
-// Set sections as active
-
-
+});
