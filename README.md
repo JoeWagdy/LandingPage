@@ -1,11 +1,8 @@
-# Project Title
-
-<h2><b>Youssef Seha
-Landing page</b></h2>
+# Youssef Seha Landing page
 
 My first full web project with HTML, CSS & JavaScript
 
-# Demo-Preview
+## Demo-Preview
 
 ![Demo GIF](Demo/demo.gif)
 [ScreenShot 1](Demo/Screenshot%20(1).png)
@@ -16,7 +13,7 @@ My first full web project with HTML, CSS & JavaScript
 
 [ScreenShot 4](Demo/Screenshot%20(4).png)
 
-# Table of contents
+## Table of contents
 
 - [Project Title](#project-title)
 - [Demo-Preview](#demo-preview)
@@ -25,7 +22,7 @@ My first full web project with HTML, CSS & JavaScript
 - [Footer](#footer)
 
 
-# Development
+## Development
 
 - This project has a folder called `CSS` which contain the stylesheet `styles.css` for our webPage
 
@@ -46,7 +43,7 @@ My first full web project with HTML, CSS & JavaScript
 - The code was written with consistent, logical, and easy-to-read formatting.
 
 
-# Footer
+## Footer
 [(Back to top)](#table-of-contents)
 
 Last but not least this was my first project in `EG-FWD` front-end web development nano degree from `Udacity` and I believe it's just the starting and there's a lot coming.
